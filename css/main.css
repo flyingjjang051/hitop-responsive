@@ -134,3 +134,39 @@
 
 @keyframes mouseAnimation { 0% { transform: translateY(0); }
   100% { transform: translateY(10px); } }
+
+@media all and (max-width: 1200px) { .section { padding: 50px 0; }
+  #mainVisual { position: relative; }
+  #mainVisual ul li { height: 80vh; }
+  #mainVisual .pagination .swiper-pagination-bullets .swiper-pagination-bullet { width: 16px; height: 16px; }
+  #mainVisual .pagination .swiper-pagination-bullets .swiper-pagination-bullet-active { width: 60px; }
+  #mainVisual .iconScroll .icon { width: 18px; height: 36px; }
+  #mainVisual .iconScroll .txt { font-size: 12px; }
+  #mainVisual .slogan { width: 100%; }
+  #mainVisual .slogan h2 { font-size: 36px; }
+  #mainVisual .slogan p { font-size: 16px; }
+  #mainVisual .btn { width: 50px; height: 50px; }
+  #mainVisual .btn .material-icons { font-size: 24px; }
+  #quickMenu .list li img { width: 100%; } }
+
+@media all and (max-width: 800px) { #mainVisual li { height: 60vh; }
+  #mainVisual .slogan h2 { font-size: 30px; }
+  #mainVisual .slogan p { font-size: 14px; }
+  #mainVisual .btn.prev { left: 20px; }
+  #mainVisual .btn.next { right: 20px; }
+  #quickMenu { padding-top: 0; }
+  #quickMenu .list li .txtBox { left: 20px; bottom: 20px; }
+  #quickMenu .list li .txtBox h3 { font-size: 24px; }
+  #quickMenu .list li .txtBox p { font-size: 14px; word-break: keep-all; } }
+
+@media all and (max-width: 640px) { #mainVisual .slogan { width: 60%; }
+  #mainVisual .slogan h2 { font-size: 24px; }
+  #mainVisual .slogan p { font-size: 12px; }
+  #mainVisual .pagination { bottom: 60px; }
+  #mainVisual .iconScroll { bottom: 20px; }
+  #mainVisual .btn { width: 40px; height: 40px; }
+  #mainVisual .btn.prev { left: 10px; }
+  #mainVisual .btn.next { right: 10px; }
+  #quickMenu .list li .txtBox { left: 10px; bottom: 10px; }
+  #quickMenu .list li .txtBox h3 { font-size: 18px; }
+  #quickMenu .list li .txtBox p { font-size: 12px; } }
