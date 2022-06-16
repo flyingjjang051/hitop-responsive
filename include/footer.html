@@ -54,11 +54,27 @@
     return false;
   });
   depth01.on("click",function(){
-    const depth02 = $(this).next();
-    console.log("🚀 ~ file: footer.html ~ line 58 ~ depth01.on ~ depth02", depth02)
-    depth02.slideToggle();
-    return false;
+    if(header.hasClass("mobile")) {
+      const depth02 = $(this).next();
+      depth02.slideToggle();
+      return false;
+    }
+  });
+  
+  window.addEventListener("resize",function(){
+    console.log("vanilla===",window.innerWidth);
+    const w = window.innerWidth;
+    if(w<1200) {
+      header.addClass("mobile");
+    } else {
+      header.removeClass("mobile");
+    }
+  });
+  $(window).on("resize",function(){
+    console.log("jquery===",$(document).width()); //스크롤바 포함하지 않음
   })
+  window.dispatchEvent(new Event("resize"));
+  
 </script>
 
 
