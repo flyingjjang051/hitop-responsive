@@ -84,7 +84,10 @@ button { background: none; border: none; outline: none; }
   #header #gnb .list { flex-direction: column; align-items: stretch; }
   #header #gnb .list > li .depth01 { width: 100%; }
   #header .online { right: 100px; }
-  #header .btnAll { display: block; } }
+  #header .btnAll { display: block; }
+  #footer .addressBox .container { flex-direction: column; align-items: center; text-align: center; }
+  #footer .addressBox .container .address { margin: 50px 0; }
+  #footer .addressBox .container .tel { margin-left: 0; } }
 
 @media all and (max-width: 1024px) { #header { height: 60px; }
   #header:after { top: 60px; }
@@ -96,3 +99,13 @@ button { background: none; border: none; outline: none; }
   #header .btnAll span:nth-child(1) { top: 19px; }
   #header .btnAll span:nth-child(2) { top: 29px; }
   #header .btnAll span:nth-child(3) { top: 39px; } }
+
+@media all and (max-width: 640px) { #footer .utilMenu ul { font-size: 12px; }
+  #footer .utilMenu ul li a { padding: 20px 20px; }
+  #footer .addressBox .fLogo img { height: 60px; }
+  #footer .addressBox .container .address { margin: 30px 0; font-size: 14px; }
+  #footer .addressBox .container .address .info { display: flex; flex-direction: column; }
+  #footer .addressBox .container .address .info span { margin: 5px 0; display: block; margin-right: 0; }
+  #footer .addressBox .container .tel strong { font-size: 24px; } }
+
+@media all and (max-width: 480px) { #footer .utilMenu ul li a { padding: 20px 15px; letter-spacing: -0.05em; } }

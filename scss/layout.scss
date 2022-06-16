@@ -261,6 +261,21 @@ button {
       display: block;
     }
   }
+  #footer {
+    .addressBox {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        .address {
+          margin: 50px 0;
+        }
+        .tel {
+          margin-left: 0;
+        }
+      }
+    }
+  }
 }
 
 @media all and (max-width: 1024px) {
@@ -296,6 +311,62 @@ button {
         }
         &:nth-child(3) {
           top: 39px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 640px) {
+  #footer {
+    .utilMenu {
+      ul {
+        font-size: 12px;
+        li {
+          a {
+            padding: 20px 20px;
+          }
+        }
+      }
+    }
+    .addressBox {
+      .fLogo {
+        img {
+          height: 60px;
+        }
+      }
+      .container {
+        .address {
+          margin: 30px 0;
+          font-size: 14px;
+          .info {
+            display: flex;
+            flex-direction: column;
+            span {
+              margin: 5px 0;
+              display: block;
+              margin-right: 0;
+            }
+          }
+        }
+        .tel {
+          strong {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 480px) {
+  #footer {
+    .utilMenu {
+      ul {
+        li {
+          a {
+            padding: 20px 15px;
+            letter-spacing: -0.05em;
+          }
         }
       }
     }

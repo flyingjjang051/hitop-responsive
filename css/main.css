@@ -112,9 +112,9 @@
 
 #business .list li .border span:nth-child(4) { width: 1px; height: 100%; top: 0; left: 0; transform: scaleY(0); transform-origin: 50% 100%; transition-delay: 0.75s; }
 
-#news .list { display: flex; margin: 0 -10px; }
+#news .list { display: flex; }
 
-#news .list li { width: calc(33.33% - 10px); margin: 0 10px; border: 1px solid #ccc; box-sizing: border-box; }
+#news .list li { border: 1px solid #ccc; box-sizing: border-box; }
 
 #news .list li img { width: 100%; height: 350px; object-fit: cover; }
 
@@ -129,6 +129,8 @@
 #customer { color: #fff; background-position: 50% 50%; background-image: url("../images/main/bgCustomer.jpg"); background-size: cover; }
 
 #customer .titleBox h2:after { width: 30px; height: 2px; margin: 30px auto; background-color: #fff; display: block; position: relative; content: ""; }
+
+#customer .titleBox p { line-height: 1.5; }
 
 @keyframes mouseAnimation { 0% { transform: translateY(0); }
   100% { transform: translateY(10px); } }
@@ -148,9 +150,14 @@
   #quickMenu .list li img { width: 100%; }
   #business .list { margin: 10px; }
   #business .list li { width: calc(50% - 20px); }
-  #business .list li img { width: 100%; } }
+  #business .list li img { width: 100%; }
+  #news { overflow: hidden; padding: 50px 20px; } }
 
-@media all and (max-width: 800px) { #mainVisual li { height: 60vh; }
+@media all and (max-width: 800px) { .section { padding: 60px 0; }
+  .section .titleBox { margin-bottom: 35px; }
+  .section .titleBox h2 { margin-bottom: 15px; font-size: 32px; }
+  .section .titleBox p { font-size: 12px; }
+  #mainVisual li { height: 60vh; }
   #mainVisual .slogan h2 { font-size: 30px; }
   #mainVisual .slogan p { font-size: 14px; }
   #mainVisual .btn.prev { left: 20px; }
@@ -163,7 +170,10 @@
   #business .list li .txtBox h3 { font-size: 18px; }
   #business .list li .txtBox p { font-size: 12px; } }
 
-@media all and (max-width: 640px) { #mainVisual .slogan { width: 60%; }
+@media all and (max-width: 640px) { .section .titleBox { margin-bottom: 30px; }
+  .section .titleBox h2 { font-size: 24px; }
+  .btns .btn { height: 44px; font-size: 14px; }
+  #mainVisual .slogan { width: 60%; }
   #mainVisual .slogan h2 { font-size: 24px; }
   #mainVisual .slogan p { font-size: 12px; }
   #mainVisual .pagination { bottom: 60px; }
@@ -178,5 +188,10 @@
   #business .list li { margin: 5px; width: calc(50% - 10px); }
   #business .list li img { width: 100%; }
   #business .list li .border { display: none; }
-  #business .list li .txtBox h3 { margin-bottom: 0; }
-  #business .list li .txtBox p { display: none; } }
+  #business .list li .txtBox { left: 10px; bottom: 10px; }
+  #business .list li .txtBox h3 { margin-bottom: 0; font-size: 14px; }
+  #business .list li .txtBox p { display: none; }
+  #news { padding: 50px 10px; }
+  #news .list li .desc h3 { font-size: 20px; }
+  #news .list li .desc .txt { font-size: 14px; }
+  #news .list li .desc .date { font-size: 14px; } }
