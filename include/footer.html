@@ -31,5 +31,36 @@
     </div>
   </div>
 </footer>
+
+<script>
+  const btnAll =  $(".btnAll");
+  const header = $("#header");
+  //const depth01 = document.querySelectorAll("#gnb .depth01");
+  const depth01 = $("#gnb .depth01");
+  //const depth02 = $("#gnb .depth02");
+  //console.log("🚀 ~ file: footer.html ~ line 41 ~ jQueryDepth01", jQueryDepth01)
+  //const btnAll02 =  document.querySelector(".btnAll"); 
+  // console.log("🚀 ~ file: footer.html ~ line 38 ~ btnAll02", btnAll02)
+  // console.log("🚀 ~ file: footer.html ~ line 37 ~ btnAll", btnAll);
+  // console.log(btnAll[0]===btnAll02);
+  //btnAll.addClass("aaa");
+  //btnAll02.classList.add("bbb");
+  const btnAllClick = function() {
+    
+  }
+  btnAll.on("click",function(e){
+    //e.preventDefault();
+    header.toggleClass("open");
+    return false;
+  });
+  depth01.on("click",function(){
+    const depth02 = $(this).next();
+    console.log("🚀 ~ file: footer.html ~ line 58 ~ depth01.on ~ depth02", depth02)
+    depth02.slideToggle();
+    return false;
+  })
+</script>
+
+
 </body>
 </html>

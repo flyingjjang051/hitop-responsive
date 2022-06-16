@@ -46,6 +46,7 @@ button {
     position: absolute;
     top: 0;
     left: 50px;
+    z-index: 2;
   }
   .online {
     display: flex;
@@ -143,6 +144,27 @@ button {
       }
     }
   }
+  &.open {
+    #gnb {
+      right: 0;
+    }
+    .btnAll {
+      span {
+        &:nth-child(1) {
+          top: 49px;
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          left: -30px;
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          top: 49px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
 }
 #footer {
   color: #ccc;
@@ -234,7 +256,7 @@ button {
   }
   #header {
     .container {
-      justify-content: stretch;
+      //justify-content: stretch;
     }
     #gnb {
       width: 100%;
@@ -243,13 +265,16 @@ button {
       flex-grow: 1;
       position: fixed;
       top: 0;
-      right: 100%;
+      right: -100%;
+      background-color: $main-color;
+      transition: right 0.5s ease-in-out;
       .list {
         flex-direction: column;
         align-items: stretch;
         > li {
           .depth01 {
             width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
           }
         }
       }
@@ -311,6 +336,18 @@ button {
         }
         &:nth-child(3) {
           top: 39px;
+        }
+      }
+    }
+    &.open {
+      .btnAll {
+        span {
+          &:nth-child(1) {
+            top: 29px;
+          }
+          &:nth-child(3) {
+            top: 29px;
+          }
         }
       }
     }

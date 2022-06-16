@@ -12,7 +12,7 @@ button { background: none; border: none; outline: none; }
 
 #header .container { display: flex; justify-content: center; position: static; max-width: 1920px; }
 
-#header #logo { display: flex; align-items: center; height: 100px; position: absolute; top: 0; left: 50px; }
+#header #logo { display: flex; align-items: center; height: 100px; position: absolute; top: 0; left: 50px; z-index: 2; }
 
 #header .online { display: flex; align-items: center; height: 60px; position: absolute; top: 20px; right: 50px; padding: 0 30px; border: 2px solid #fff; border-radius: 100px; box-sizing: border-box; }
 
@@ -45,6 +45,14 @@ button { background: none; border: none; outline: none; }
 #header .btnAll span:nth-child(2) { top: 49px; }
 
 #header .btnAll span:nth-child(3) { top: 64px; }
+
+#header.open #gnb { right: 0; }
+
+#header.open .btnAll span:nth-child(1) { top: 49px; transform: rotate(45deg); }
+
+#header.open .btnAll span:nth-child(2) { left: -30px; opacity: 0; }
+
+#header.open .btnAll span:nth-child(3) { top: 49px; transform: rotate(-45deg); }
 
 #footer { color: #ccc; background-color: #333; }
 
@@ -79,10 +87,9 @@ button { background: none; border: none; outline: none; }
   #header .online { right: 20px; } }
 
 @media all and (max-width: 1200px) { .container { width: 100%; }
-  #header .container { justify-content: stretch; }
-  #header #gnb { width: 100%; height: 100vh; padding-top: 100px; flex-grow: 1; position: fixed; top: 0; right: 100%; }
+  #header #gnb { width: 100%; height: 100vh; padding-top: 100px; flex-grow: 1; position: fixed; top: 0; right: -100%; background-color: #bf0c14; transition: right 0.5s ease-in-out; }
   #header #gnb .list { flex-direction: column; align-items: stretch; }
-  #header #gnb .list > li .depth01 { width: 100%; }
+  #header #gnb .list > li .depth01 { width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
   #header .online { right: 100px; }
   #header .btnAll { display: block; }
   #footer .addressBox .container { flex-direction: column; align-items: center; text-align: center; }
@@ -98,7 +105,9 @@ button { background: none; border: none; outline: none; }
   #header .btnAll span { width: 30px; left: 15px; }
   #header .btnAll span:nth-child(1) { top: 19px; }
   #header .btnAll span:nth-child(2) { top: 29px; }
-  #header .btnAll span:nth-child(3) { top: 39px; } }
+  #header .btnAll span:nth-child(3) { top: 39px; }
+  #header.open .btnAll span:nth-child(1) { top: 29px; }
+  #header.open .btnAll span:nth-child(3) { top: 29px; } }
 
 @media all and (max-width: 640px) { #footer .utilMenu ul { font-size: 12px; }
   #footer .utilMenu ul li a { padding: 20px 20px; }
