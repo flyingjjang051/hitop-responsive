@@ -70,7 +70,7 @@ button { background: none; border: none; outline: none; }
 
 #footer .addressBox .container .tel strong { margin-top: 10px; font-size: 38.4px; letter-spacing: -0.02em; }
 
-@media all and (min-width: 1199px) { #header #gnb .list li:hover .depth01 { background-color: #bf0c14; }
+@media all and (min-width: 1201px) { #header #gnb .list li:hover .depth01 { background-color: #bf0c14; }
   #header #gnb .list li:hover .depth01:after { transform: scaleX(1); }
   #header #gnb .list li:hover .depth02 { display: block !important; }
   #header #gnb .list li .depth02 { padding: 30px 10px; text-align: center; color: #fff; background-color: #bf0c14; border-radius: 0 0 10px 10px; display: none; }

@@ -32,28 +32,29 @@
   </div>
 </footer>
 
+
 <script>
   const btnAll =  $(".btnAll");
   const header = $("#header");
-  //const depth01 = document.querySelectorAll("#gnb .depth01");
   const depth01 = $("#gnb .depth01");
-  //const depth02 = $("#gnb .depth02");
-  //console.log("🚀 ~ file: footer.html ~ line 41 ~ jQueryDepth01", jQueryDepth01)
-  //const btnAll02 =  document.querySelector(".btnAll"); 
-  // console.log("🚀 ~ file: footer.html ~ line 38 ~ btnAll02", btnAll02)
-  // console.log("🚀 ~ file: footer.html ~ line 37 ~ btnAll", btnAll);
-  // console.log(btnAll[0]===btnAll02);
-  //btnAll.addClass("aaa");
-  //btnAll02.classList.add("bbb");
+  const depth02 = $("#gnb .depth02");
+  
+  // ctrl + alt + l   (콘솔)
+  // alt + shift + c  (주석)
+  // alt + shift + u  (주석삭제)
+  
   btnAll.on("click",function(e){
     //e.preventDefault();
     header.toggleClass("open");
+    depth02.delay(500).slideUp(); // method chainning
     return false;
   });
   depth01.on("click",function(){
     if(header.hasClass("mobile")) {
       const depth02 = $(this).next();
       depth02.slideToggle();
+      //depth02.toggle();  // show(); hide();
+      //depth02.fadeToggle();
       return false;
     }
   });
@@ -72,10 +73,11 @@
   */
   $(window).on("resize",function(){
     const w = $(window).outerWidth();
-    if(w<1200) {
+    if(w<=1200) {
       header.addClass("mobile");
     } else {
-      header.removeClass("mobile");
+      header.removeClass("mobile open");
+      depth02.removeAttr("style");
     }
   });
   $(window).trigger("resize");
