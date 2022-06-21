@@ -141,12 +141,12 @@
       &:nth-child(1) {
         display: block;
       }
-      &:target {
-        display: block;
-      }
-      &:not(:target) {
-        display: none;
-      }
+      // &:target {
+      //   display: block;
+      // }
+      // &:not(:target) {
+      //   display: none;
+      // }
     }
   }
 }
@@ -331,6 +331,7 @@
     height: 500px;
     background-color: #ccc;
     margin-bottom: 50px;
+    width: 100%;
   }
   .tab {
     .tabMenu {
@@ -409,6 +410,11 @@
           text-align: left;
         }
       }
+    }
+  }
+  #location {
+    .tabContents {
+      padding: 0 clamp(20px, 4vw, 50px);
     }
   }
 }
