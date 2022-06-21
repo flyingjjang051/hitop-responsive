@@ -140,7 +140,8 @@
 
 @media all and (min-width: 1201px) { .subVisual #lnb .container .menu:hover ul { display: block !important; } }
 
-@media all and (max-width: 1200px) { #introduce .desc { margin-top: clamp(20px, 5vw, 50px); padding: 0 clamp(20px, 6.5vw, 80px); }
+@media all and (max-width: 1200px) { .subVisual { height: clamp(300px, 33.33vw, 400px); }
+  #introduce .desc { margin-top: clamp(20px, 5vw, 50px); padding: 0 clamp(20px, 6.5vw, 80px); }
   #introduce .desc .headTxt { font-size: clamp(20px, 4vw, 48px); margin-bottom: clamp(20px, 5vw, 50px); }
   #introduce .desc .txtBox p { margin-bottom: clamp(20px, 4vw, 50px); font-size: clamp(12px, 1.3vw, 16px); text-align: left; } }
 

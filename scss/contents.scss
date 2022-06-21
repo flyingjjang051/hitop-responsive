@@ -381,6 +381,9 @@
 }
 
 @media all and (max-width: 1200px) {
+  .subVisual {
+    height: clamp(300px, 33.33vw, 400px);
+  }
   #introduce {
     .desc {
       margin-top: clamp(20px, 5vw, 50px);

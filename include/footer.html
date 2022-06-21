@@ -46,7 +46,9 @@
   
   const lnb = $("#lnb");
   
-  let lnbTop = lnb.offset().top;
+  //let lnbOffsetStop = lnb.offset().top;
+  let lnbTop = 350;
+  console.log("🚀 ~ file: footer.html ~ line 50 ~ lnbTop", lnbTop)
   
   lnbButton.on("click",function(){
     //console.log(this);
@@ -91,6 +93,16 @@
   */
   $(window).on("resize",function(){
     const w = $(window).outerWidth();
+    console.log("🚀 ~ file: footer.html ~ line 96 ~ $ ~ lnbTop", lnbTop)
+    lnbTop = $(".subVisual").height() - 50;
+    console.log("🚀 ~ file: footer.html ~ line 98 ~ $ ~ lnbTop", lnbTop)
+    /*
+    if(w<=960) {
+      lnbTop=250;
+    } else {
+      lnbTop=350;
+    }
+    */
     if(w<=1200) {
       header.addClass("mobile");
     } else {
