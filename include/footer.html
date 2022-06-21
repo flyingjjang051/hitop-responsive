@@ -39,6 +39,24 @@
   const depth01 = $("#gnb .depth01");
   const depth02 = $("#gnb .depth02");
   
+  const lnbDepth01 = $("#lnb .depth01 ul");
+  const lnbDepth02 = $("#lnb .depth02 ul");
+  
+  const lnbButton = $("#lnb .menu button");
+  
+  const lnb = $("#lnb");
+  
+  let lnbTop = lnb.offset().top;
+  
+  lnbButton.on("click",function(){
+    //console.log(this);
+    if(header.hasClass("mobile")) {
+      const ul = $(this).next();
+      ul.slideToggle();
+    }
+  })
+  
+  
   // ctrl + alt + l   (콘솔)
   // alt + shift + c  (주석)
   // alt + shift + u  (주석삭제)
@@ -78,8 +96,19 @@
     } else {
       header.removeClass("mobile open");
       depth02.removeAttr("style");
+      lnbDepth01.removeAttr("style");
+      lnbDepth02.removeAttr("style");
     }
   });
+  $(window).on("scroll",function(){
+    const st = $(window).scrollTop();
+    if(st>lnbTop) {
+      lnb.addClass("fixed");
+    } else {
+      lnb.removeClass("fixed");
+    }
+    //console.log("🚀 ~ file: footer.html ~ line 105 ~ $ ~ st", st)
+  })
   $(window).trigger("resize");
   
   

@@ -6,6 +6,8 @@
 
 .subVisual #lnb { position: absolute; bottom: 0; background-color: rgba(0, 0, 0, 0.5); width: 100%; height: 50px; }
 
+.subVisual #lnb.fixed { position: fixed; width: 100%; top: 0; box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); backdrop-filter: blur(5px); }
+
 .subVisual #lnb .container { display: flex; }
 
 .subVisual #lnb .container .home { display: flex; width: 50px; height: 50px; overflow: hidden; text-indent: -999px; justify-content: center; align-items: center; border-left: 1px solid rgba(255, 255, 255, 0.5); }
@@ -13,8 +15,6 @@
 .subVisual #lnb .container .home:before { text-indent: 0; font-size: 24px; color: #fff; font-family: "Material Icons"; content: "home"; display: inline-block; margin-left: 0; }
 
 .subVisual #lnb .container .menu { width: 200px; }
-
-.subVisual #lnb .container .menu:hover ul { display: block; }
 
 .subVisual #lnb .container .menu:nth-of-type(2) button { border-right: 1px solid rgba(255, 255, 255, 0.5); }
 
@@ -28,7 +28,7 @@
 
 .h4 { font-size: 22px; font-weight: 700; margin-bottom: 20px; display: flex; }
 
-.h4:before { content: ''; display: block; width: 4px; height: 20px; background: #db3e3e; background: linear-gradient(180deg, #bf0c14 0%, #bf0c14 50%, #ccc 50%, #ccc 100%); margin-right: 15px; }
+.h4:before { content: ""; display: block; width: 4px; height: 20px; background: #db3e3e; background: linear-gradient(180deg, #bf0c14 0%, #bf0c14 50%, #ccc 50%, #ccc 100%); margin-right: 15px; }
 
 #subVisual01 { background-image: url("../images/contents/subVisual01.jpg"); }
 
@@ -84,7 +84,7 @@
 
 #introduce .summaryBox .txtBox .main { font-size: 48px; font-weight: 700; }
 
-#introduce .summaryBox .txtBox .main:after { content: ''; display: block; width: 40px; height: 2px; background-color: rgba(255, 255, 255, 0.5); margin: 20px auto; }
+#introduce .summaryBox .txtBox .main:after { content: ""; display: block; width: 40px; height: 2px; background-color: rgba(255, 255, 255, 0.5); margin: 20px auto; }
 
 #introduce .summaryBox .txtBox .sub { line-height: 1.5; font-size: 20px; }
 
@@ -100,7 +100,7 @@
 
 #history .historyBox { margin-top: 150px; position: relative; }
 
-#history .historyBox:before { content: ''; display: block; position: absolute; top: 0; left: 50%; width: 1px; height: 100%; background-color: #ccc; }
+#history .historyBox:before { content: ""; display: block; position: absolute; top: 0; left: 50%; width: 1px; height: 100%; background-color: #ccc; }
 
 #history .historyBox .yearBox { display: flex; padding: 50px 0; position: relative; }
 
@@ -108,19 +108,19 @@
 
 #history .historyBox .yearBox:nth-child(2n) .inner .year:before { left: -60px; }
 
-#history .historyBox .yearBox:nth-child(2n+1) { text-align: right; padding-right: 100px; }
+#history .historyBox .yearBox:nth-child(2n + 1) { text-align: right; padding-right: 100px; }
 
-#history .historyBox .yearBox:nth-child(2n+1) .inner .year:before { right: -60px; }
+#history .historyBox .yearBox:nth-child(2n + 1) .inner .year:before { right: -60px; }
 
-#history .historyBox .yearBox:nth-child(2n+1) .inner .monthBox li { flex-direction: row-reverse; }
+#history .historyBox .yearBox:nth-child(2n + 1) .inner .monthBox li { flex-direction: row-reverse; }
 
-#history .historyBox .yearBox:nth-child(2n+1) .inner .monthBox li .month { margin-right: 0; margin-left: 20px; }
+#history .historyBox .yearBox:nth-child(2n + 1) .inner .monthBox li .month { margin-right: 0; margin-left: 20px; }
 
 #history .historyBox .yearBox .inner { width: 50%; }
 
 #history .historyBox .yearBox .inner .year { font-size: 48px; font-weight: 700; margin-bottom: 30px; position: relative; }
 
-#history .historyBox .yearBox .inner .year:before { content: ''; display: block; width: 20px; height: 20px; border-radius: 100%; background-color: #fff; border: 5px solid #bf0c14; box-sizing: border-box; position: absolute; top: 15px; }
+#history .historyBox .yearBox .inner .year:before { content: ""; display: block; width: 20px; height: 20px; border-radius: 100%; background-color: #fff; border: 5px solid #bf0c14; box-sizing: border-box; position: absolute; top: 15px; }
 
 #history .historyBox .yearBox .inner .monthBox li { display: flex; margin-bottom: 20px; }
 
@@ -136,4 +136,21 @@
 
 .overlay .address { margin-top: 10px; font-weight: 700; font-size: 20px; }
 
-.overlay:before { content: ''; display: block; width: 0; height: 0; border: 10px solid transparent; border-top-color: #bf0c14; position: absolute; left: calc(50% - 5px); bottom: -20px; }
+.overlay:before { content: ""; display: block; width: 0; height: 0; border: 10px solid transparent; border-top-color: #bf0c14; position: absolute; left: calc(50% - 5px); bottom: -20px; }
+
+@media all and (min-width: 1201px) { .subVisual #lnb .container .menu:hover ul { display: block !important; } }
+
+@media all and (max-width: 1200px) { #introduce .desc { margin-top: clamp(20px, 5vw, 50px); padding: 0 clamp(20px, 6.5vw, 80px); }
+  #introduce .desc .headTxt { font-size: clamp(20px, 4vw, 48px); margin-bottom: clamp(20px, 5vw, 50px); }
+  #introduce .desc .txtBox p { margin-bottom: clamp(20px, 4vw, 50px); font-size: clamp(12px, 1.3vw, 16px); text-align: left; } }
+
+@media all and (max-width: 960px) { * { word-break: keep-all; }
+  .subVisual { height: 300px; }
+  .subVisual .titleBox .subTitle { font-size: clamp(20px, 5vw, 48px); margin-bottom: 10px; }
+  .subVisual .titleBox p { font-size: 12px; }
+  .subContents .contentsTitle { font-size: clamp(24px, 4vw, 38px); margin: clamp(30px, 8vw, 80px) 0; }
+  .subContents .contentsTitle:after { margin: clamp(15px, 3vw, 30px) auto; }
+  #introduce .summaryBox { flex-direction: column; }
+  #introduce .summaryBox .txtBox { width: 100%; padding: clamp(30px, 10vw, 80px) 0; }
+  #introduce .summaryBox .txtBox .main { font-size: clamp(20px, 5vw, 48px); }
+  #introduce .summaryBox .txtBox .sub { font-size: clamp(12px, 2vw, 20px); } }

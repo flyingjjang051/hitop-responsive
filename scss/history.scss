@@ -1,0 +1,80 @@
+#history {
+  .historyBox {
+    margin-top: 150px;
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 1px;
+      height: 100%;
+      background-color: #ccc;
+    }
+    .yearBox {
+      display: flex;
+      padding: 50px 0;
+      position: relative;
+      &:nth-child(2n) {
+        justify-content: flex-end;
+        padding-left: 100px;
+        .inner .year:before {
+          left: -60px;
+        }
+      }
+      &:nth-child(2n + 1) {
+        text-align: right;
+        padding-right: 100px;
+        .inner {
+          .year:before {
+            right: -60px;
+          }
+          .monthBox {
+            li {
+              flex-direction: row-reverse;
+              //justify-content: flex-start;
+              .month {
+                margin-right: 0;
+                margin-left: 20px;
+              }
+            }
+          }
+        }
+      }
+
+      .inner {
+        width: 50%;
+        //background-color: #666;
+        .year {
+          font-size: $font-large;
+          font-weight: 700;
+          margin-bottom: 30px;
+          position: relative;
+          &:before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: #fff;
+            border: 5px solid $main-color;
+            box-sizing: border-box;
+            position: absolute;
+            top: 15px;
+          }
+        }
+        .monthBox {
+          li {
+            display: flex;
+            margin-bottom: 20px;
+            .month {
+              font-weight: 700;
+              margin-right: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
