@@ -120,7 +120,7 @@
 
 #history .historyBox .yearBox .inner .year { font-size: 48px; font-weight: 700; margin-bottom: 30px; position: relative; }
 
-#history .historyBox .yearBox .inner .year:before { content: ""; display: block; width: 20px; height: 20px; border-radius: 100%; background-color: #fff; border: 5px solid #bf0c14; box-sizing: border-box; position: absolute; top: 15px; }
+#history .historyBox .yearBox .inner .year:before { content: ""; display: block; width: 20px; height: 20px; border-radius: 100%; background-color: #fff; border: 5px solid #bf0c14; box-sizing: border-box; position: absolute; top: 50%; transform: translateY(-50%); }
 
 #history .historyBox .yearBox .inner .monthBox li { display: flex; margin-bottom: 20px; }
 
@@ -141,9 +141,10 @@
 @media all and (min-width: 1201px) { .subVisual #lnb .container .menu:hover ul { display: block !important; } }
 
 @media all and (max-width: 1200px) { .subVisual { height: clamp(300px, 33.33vw, 400px); }
-  #introduce .desc { margin-top: clamp(20px, 5vw, 50px); padding: 0 clamp(20px, 6.5vw, 80px); }
-  #introduce .desc .headTxt { font-size: clamp(20px, 4vw, 48px); margin-bottom: clamp(20px, 5vw, 50px); }
-  #introduce .desc .txtBox p { margin-bottom: clamp(20px, 4vw, 50px); font-size: clamp(12px, 1.3vw, 16px); text-align: left; } }
+  .subVisual .titleBox { margin-top: clamp(0px, 4vw, 50px); }
+  .subContents .desc .headTxt { font-size: clamp(20px, 4vw, 48px); margin-bottom: clamp(20px, 5vw, 50px); }
+  #introduce .desc, #greeting .desc { margin-top: clamp(20px, 5vw, 50px); padding: 0 clamp(20px, 6.5vw, 80px); }
+  #introduce .desc .txtBox p, #greeting .desc .txtBox p { margin-bottom: clamp(20px, 4vw, 50px); font-size: clamp(12px, 1.3vw, 16px); text-align: left; } }
 
 @media all and (max-width: 960px) { * { word-break: keep-all; }
   .subVisual { height: 300px; }
@@ -154,4 +155,20 @@
   #introduce .summaryBox { flex-direction: column; }
   #introduce .summaryBox .txtBox { width: 100%; padding: clamp(30px, 10vw, 80px) 0; }
   #introduce .summaryBox .txtBox .main { font-size: clamp(20px, 5vw, 48px); }
-  #introduce .summaryBox .txtBox .sub { font-size: clamp(12px, 2vw, 20px); } }
+  #introduce .summaryBox .txtBox .sub { font-size: clamp(12px, 2vw, 20px); }
+  #greeting .container { flex-direction: column; }
+  #greeting .container img { width: 100%; max-height: 400px; object-fit: cover; }
+  #history .historyBox { margin-top: clamp(50px, 15vw, 150px); padding-left: 70px; font-size: clamp(12px, 2vw, 16px); line-height: 1.5; }
+  #history .historyBox:before { left: 40px; }
+  #history .historyBox .yearBox { padding: clamp(10px, 5vw, 50px) 0; padding-right: 20px; }
+  #history .historyBox .yearBox:nth-child(2n) { justify-content: flex-start; padding-left: 0; }
+  #history .historyBox .yearBox:nth-child(2n) .inner .year:before { left: -40px; }
+  #history .historyBox .yearBox:nth-child(2n + 1) { text-align: left; }
+  #history .historyBox .yearBox:nth-child(2n + 1) .inner .year:before { right: auto; left: -40px; }
+  #history .historyBox .yearBox:nth-child(2n + 1) .inner .monthBox li { flex-direction: row; }
+  #history .historyBox .yearBox:nth-child(2n + 1) .inner .monthBox li .month { margin-left: 0; margin-right: 20px; }
+  #history .historyBox .yearBox .inner { width: 100%; }
+  #history .historyBox .yearBox .inner .year { line-height: 1; font-size: clamp(24px, 5vw, 48px); margin-bottom: clamp(10px, 3.2vw, 30px); } }
+
+@media all and (max-width: 480px) { .tab .tabMenu { font-size: 12px; text-align: center; }
+  .tab .tabMenu li a { height: 40px; } }

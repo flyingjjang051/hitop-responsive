@@ -308,7 +308,8 @@
             border: 5px solid $main-color;
             box-sizing: border-box;
             position: absolute;
-            top: 15px;
+            top: 50%;
+            transform: translateY(-50%);
           }
         }
         .monthBox {
@@ -383,15 +384,24 @@
 @media all and (max-width: 1200px) {
   .subVisual {
     height: clamp(300px, 33.33vw, 400px);
+    .titleBox {
+      margin-top: clamp(0px, 4vw, 50px);
+    }
   }
-  #introduce {
+  .subContents {
     .desc {
-      margin-top: clamp(20px, 5vw, 50px);
-      padding: 0 clamp(20px, 6.5vw, 80px);
       .headTxt {
         font-size: clamp(20px, 4vw, 48px);
         margin-bottom: clamp(20px, 5vw, 50px);
       }
+    }
+  }
+
+  #introduce,
+  #greeting {
+    .desc {
+      margin-top: clamp(20px, 5vw, 50px);
+      padding: 0 clamp(20px, 6.5vw, 80px);
       .txtBox {
         p {
           margin-bottom: clamp(20px, 4vw, 50px);
@@ -439,6 +449,79 @@
         .sub {
           font-size: clamp(12px, 2vw, 20px);
         }
+      }
+    }
+  }
+  #greeting {
+    .container {
+      flex-direction: column;
+      img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+      }
+    }
+  }
+  #history {
+    .historyBox {
+      margin-top: clamp(50px, 15vw, 150px);
+      padding-left: 70px;
+      font-size: clamp(12px, 2vw, 16px);
+      line-height: 1.5;
+      &:before {
+        left: 40px;
+      }
+      .yearBox {
+        padding: clamp(10px, 5vw, 50px) 0;
+        padding-right: 20px;
+        &:nth-child(2n) {
+          justify-content: flex-start;
+          padding-left: 0;
+          .inner {
+            .year {
+              &:before {
+                left: -40px;
+              }
+            }
+          }
+        }
+        &:nth-child(2n + 1) {
+          text-align: left;
+          .inner {
+            .year {
+              &:before {
+                right: auto;
+                left: -40px;
+              }
+            }
+            .monthBox li {
+              flex-direction: row;
+              .month {
+                margin-left: 0;
+                margin-right: 20px;
+              }
+            }
+          }
+        }
+        .inner {
+          width: 100%;
+          .year {
+            line-height: 1;
+            font-size: clamp(24px, 5vw, 48px);
+            margin-bottom: clamp(10px, 3.2vw, 30px);
+          }
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 480px) {
+  .tab {
+    .tabMenu {
+      font-size: 12px;
+      text-align: center;
+      li a {
+        height: 40px;
       }
     }
   }
