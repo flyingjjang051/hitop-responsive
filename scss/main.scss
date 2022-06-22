@@ -13,21 +13,6 @@
   }
 }
 
-.btns {
-  display: flex;
-  justify-content: center;
-  .btn {
-    display: flex;
-    align-items: center;
-    height: 60px;
-    overflow: hidden;
-    padding: 0 40px;
-    border-radius: 100px;
-    background-color: $main-color;
-    @include longShadow(darken($main-color, 10), 40);
-  }
-}
-
 #mainVisual {
   overflow: hidden;
   z-index: 1;
