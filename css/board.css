@@ -45,3 +45,30 @@
 .searchForm #searchCategory { height: 50px; padding: 0 10px; border: 1px solid #999; width: 200px; margin-right: 5px; }
 
 .searchForm button { width: 80px; background-color: #111; color: #fff; border-radius: 5px; }
+
+.board .table { display: table; width: 100%; table-layout: fixed; border-top: 2px solid #333; }
+
+.board .table .thead { display: table-header-group; background-color: #f8f8f8; font-weight: 500; }
+
+.board .table .tbody { display: table-row-group; width: 100%; }
+
+.board .table .tbody .row { display: table-row; transition: all 0.25s ease; }
+
+.board .table .tbody .row:nth-child(2n) { background-color: #f8f8f8; }
+
+.board .table .tbody .row:hover { background-color: #111; color: #fff; }
+
+.board .table .tbody .row .title { text-align: left; }
+
+.board .table .column { display: table-cell; padding: 20px 10px; text-align: center; font-weight: 500; border-bottom: 1px solid #ccc; }
+
+@media all and (max-width: 1200px) { .board { padding: 0 50px; } }
+
+@media all and (max-width: 640px) { .board { padding: 0 20px; }
+  .board .table .thead { display: none; }
+  .board .table .tbody .row { display: flex; width: 100%; overflow: hidden; padding: 20px 10px; border-bottom: 1px solid #ccc; flex-wrap: wrap; }
+  .board .table .column { display: block; font-size: clamp(12px, 2.5vw, 16px); border-bottom: none; padding: 0; margin-right: 15px; }
+  .board .table .column:before { content: attr(data-label); display: inline-block; margin-right: 5px; }
+  .board .table .column.title { width: 100%; margin-bottom: 15px; font-size: 16px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .board .table .column.title:before { display: none; }
+  .board .table .column.no { display: none; } }

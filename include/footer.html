@@ -91,24 +91,25 @@
   });
   window.dispatchEvent(new Event("resize"));
   */
+ let num=0;
+ let num02 = 0;
+
   $(window).on("resize",function(){
-    const w = $(window).outerWidth();
-    lnbTop = $(".subVisual").height() - 50;
-    /*
-    if(w<=960) {
-      lnbTop=250;
-    } else {
-      lnbTop=350;
-    }
-    */
-    if(w<=1200) {
-      header.addClass("mobile");
-    } else {
-      header.removeClass("mobile open");
-      depth02.removeAttr("style");
-      lnbDepth01.removeAttr("style");
-      lnbDepth02.removeAttr("style");
-    }
+      const w = $(window).outerWidth();
+    
+      lnbTop = $(".subVisual").height() - 50;
+      console.log(lnbTop);
+      
+      if(w<=1200) {
+        header.addClass("mobile");
+      } else {
+        header.removeClass("mobile open");
+        depth02.removeAttr("style");
+        lnbDepth01.removeAttr("style");
+        lnbDepth02.removeAttr("style");
+      }
+      console.log("num02====",++num02);
+    console.log("num===",++num);
   });
   $(window).on("scroll",function(){
     const st = $(window).scrollTop();

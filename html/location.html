@@ -135,6 +135,9 @@
   //   tel: "01-111-222",
   //   age: 22,
   // };
+  // obj.name="www";
+  // obj.weight=20;
+  // console.log(obj.name)
   const loadMap = function (obj) {
     const container = document.querySelector("#map"); //지도를 담을 영역의 DOM 레퍼런스
     container.innerHTML = "";
@@ -202,10 +205,12 @@
     const idx = $(this).index();
     $(this).addClass("active").siblings().removeClass("active");
     tabContents.eq(idx).show().siblings().hide();
-    loadMap({addrArray[idx]});
-    //loadMap({ tel: $(this).data("tel"), title: $(this).data("title"), addr: $(this).data("addr") });
+    //loadMap({addrArray[idx]});
+    loadMap({ tel: $(this).data("tel"), title: $(this).data("title"), addr: $(this).data("addr") });
     return false;
   });
-  loadMap(addrArray[0]);
+  //console.log(tabMenu.eq(0));
+  tabMenu.eq(0).trigger("click");
+  //loadMap(addrArray[0]);
 </script>
 <? include("../include/footer.html"); ?>
