@@ -49,9 +49,11 @@
             </li>
             <li class="row">
               <span class="column th required">연락처</span>
-              <div class="column">
-                <input type="text" placeholder="010" /><span class="seperation">-</span> <input type="text" placeholder="" /><span class="seperation">-</span>
-                <input type="text" placeholder="" />
+              <div class="column tel">
+                <div class="item">
+                  <input type="text" placeholder="010" /><span class="seperation">-</span> <input type="text" placeholder="" /><span class="seperation">-</span>
+                  <input type="text" placeholder="" />
+                </div>
               </div>
             </li>
             <li class="row">
@@ -63,12 +65,17 @@
             <li class="row">
               <span class="column th">첨부파일</span>
               <div class="column">
-                <input type="file" />
+                <div class="fileBox">
+                  <input type="text" class="file" placeholder="첨부파일" />
+                  <label><input type="file" /><span>파일찾기</span></label>
+                </div>
               </div>
             </li>
             <li class="row">
               <span class="column th required">비밀번호</span>
-              <div class="column"><input type="text" /> <span class="alert">수정 및 삭제시 필요합니다.</span></div>
+              <div class="column password">
+                <div class="item"><input type="text" /> <span class="alert">수정 및 삭제시 필요합니다.</span></div>
+              </div>
             </li>
           </ul>
         </div>
@@ -80,4 +87,13 @@
     </div>
   </div>
 </div>
+<script>
+  const file = document.querySelector(".fileBox input[type='file']");
+  const fakeFileTxt = document.querySelector(".fileBox .file");
+  file.addEventListener("change", function () {
+    const fileName = file.value;
+    fakeFileTxt.value = fileName;
+    console.log(fileName);
+  });
+</script>
 <? include("../include/footer.html"); ?>

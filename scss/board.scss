@@ -251,6 +251,23 @@
             margin-right: 5px;
           }
         }
+        .tel,
+        .password {
+          .item {
+            display: flex;
+            align-items: center;
+            .seperation {
+              margin: 0 10px;
+            }
+            .alert {
+              white-space: nowrap;
+              margin-left: 20px;
+            }
+            input {
+              flex-grow: 1;
+            }
+          }
+        }
       }
     }
   }
@@ -268,6 +285,10 @@
 @media all and (max-width: 1200px) {
   .board {
     padding: 0 50px;
+  }
+  .searchForm {
+    margin: 0 50px;
+    padding: clamp(30px, 6.6vw, 80px) clamp(20px, 12.5vw, 150px);
   }
 }
 
@@ -333,8 +354,57 @@
           }
         }
       }
+      &.write {
+        .tbody {
+          .row {
+            padding: clamp(10px, 3vw, 20px) 0;
+            .column {
+              width: 100%;
+              &.th {
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
     }
     .btns {
     }
+  }
+  .searchForm {
+    margin: 0 20px;
+    padding: clamp(20px, 6.6vw, 80px) clamp(20px, 12.5vw, 150px);
+  }
+}
+.fileBox {
+  width: 100%;
+  display: flex;
+  margin-right: 20px;
+  label {
+    width: 100px;
+    height: 40px;
+    background-color: $main-color;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-left: 10px;
+  }
+  input[type="file"] {
+    width: 0;
+    height: 0;
+    position: absolute;
+    overflow: hidden;
+    padding: 0;
+    border: none;
+  }
+  input[type="text"] {
+    height: 40px;
+    width: calc(100% - 110px);
+    border: 1px solid #ccc;
+    padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
