@@ -282,7 +282,10 @@
 
   .searchForm {
     margin: 0 50px;
-    padding: clamp(30px, 6.6vw, 80px) clamp(20px, 12.5vw, 150px);
+    padding: clamp(20px, 6.6vw, 80px) clamp(20px, 12.5vw, 150px);
+  }
+  .searchForm button {
+    min-width: 50px;
   }
 }
 @media all and (max-width: 640px) {
@@ -353,8 +356,12 @@
     text-align: left;
   }
   .searchForm {
-    margin: 0 20px;
-    padding: clamp(20px, 6.6vw, 80px) clamp(20px, 12.5vw, 150px);
+    margin: 0;
+  }
+
+  .pagination a {
+    width: 30px;
+    height: 30px;
   }
 }
 .fileBox {
